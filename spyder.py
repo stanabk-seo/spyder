@@ -99,6 +99,8 @@ st.sidebar.markdown("""<hr style="height:1px;border:none;color:#333;background-c
 disobey_robots_txt = st.sidebar.checkbox("Disobey robots.txt")
 if disobey_robots_txt:
     disobey_robots = False
+else:
+    disobey_robots = True
 
 st.sidebar.markdown("""<hr style="height:1px;border:none;color:#333;background-color:#333;" /> """, unsafe_allow_html=True)
 
@@ -108,6 +110,8 @@ max_speed = st.sidebar.checkbox("Limit Maximum Speed (URLs/sec)")
 
 if max_speed:
     max_speed_limit = st.sidebar.number_input('',min_value=0.5, step=0.5)
+else:
+    max_speed_limit = 100
 
 st.sidebar.markdown("""<hr style="height:1px;border:none;color:#333;background-color:#333;" /> """, unsafe_allow_html=True)
 
@@ -117,6 +121,8 @@ download_delay = st.sidebar.checkbox("Add Download Delay (in secs)")
 
 if download_delay:
     delay = st.sidebar.number_input('',min_value=1, step=1)
+else:
+    delay = 0
 
 #depth_limit
 
@@ -126,6 +132,8 @@ crawl_depth = st.sidebar.checkbox("Limit Crawl Depth")
 
 if crawl_depth:
     depth_limit = st.sidebar.number_input('',min_value=1, step=1)
+else:
+    depth_limit = 100
 
 #crawling
 
